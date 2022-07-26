@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BRPG_Assault_Rhythm_Loop.wav-1ce7615107517a18fb0f9e6c06cdf2a8.sample"
+
+[deps]
+
+source_file="res://BRPG_Assault_Rhythm_Loop.wav"
+dest_files=[ "res://.import/BRPG_Assault_Rhythm_Loop.wav-1ce7615107517a18fb0f9e6c06cdf2a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

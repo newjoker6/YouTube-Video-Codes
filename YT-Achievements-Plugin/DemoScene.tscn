@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/YT_Achievement_Plugin/YT_Achievement.gd" type="Script" id=1]
+[ext_resource path="res://DemoScene.gd" type="Script" id=2]
+[ext_resource path="res://addons/YT_Achievement_Plugin/AchievementImages/001.png" type="Texture" id=3]
+[ext_resource path="res://addons/YT_Achievement_Plugin/AchievementImages/002.png" type="Texture" id=4]
+
+[node name="DemoScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Achievements" type="EditorPlugin" parent="."]
+script = ExtResource( 1 )
+ColourBack = Color( 0.141176, 0.337255, 0.14902, 1 )
+AchievementList = {
+"001": {
+"Description": "Clicked for the first time.",
+"Image": ExtResource( 3 ),
+"Title": "Your First Click",
+"Unlocked": false
+},
+"002": {
+"Description": "Halfway there!",
+"Image": ExtResource( 4 ),
+"Title": "Ten Clicks",
+"Unlocked": false
+}
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 569.0
+margin_top = 321.0
+margin_right = 678.0
+margin_bottom = 451.0
+text = "click me to win"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="counter" type="Label" parent="."]
+margin_left = 559.0
+margin_top = 264.0
+margin_right = 599.0
+margin_bottom = 278.0
+rect_scale = Vector2( 3, 3 )
+text = "0"
+align = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

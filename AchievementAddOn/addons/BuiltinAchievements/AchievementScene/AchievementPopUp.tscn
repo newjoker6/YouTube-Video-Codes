@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://addons/BuiltinAchievements/AchievementScene/AchievementPopUp.gd" type="Script" id=2]
+[ext_resource path="res://addons/BuiltinAchievements/Font/DroidSans.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "PopUp"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AchievementInfo:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 792, -0.25, 0, 0.25, 0, 792, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AchievementInfo:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 602, -0.25, 0, 0.25, 0, 540, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="AchievementPopUp" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/PopUp = SubResource( 2 )
+
+[node name="AchievementInfo" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.10133
+anchor_right = 1.001
+anchor_bottom = 1.10133
+margin_left = -232.0
+margin_top = -58.798
+margin_right = -0.0240479
+margin_bottom = 0.201965
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AchievementBack" type="ColorRect" parent="AchievementInfo"]
+margin_right = 232.0
+margin_bottom = 60.0
+color = Color( 0.184314, 0.180392, 0.180392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AchievementIcon" type="NinePatchRect" parent="AchievementInfo"]
+margin_left = 6.01357
+margin_top = 8.90899
+margin_right = 46.0136
+margin_bottom = 48.909
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AchievementTitle" type="Label" parent="AchievementInfo"]
+margin_left = 51.991
+margin_top = 6.56359
+margin_right = 222.991
+margin_bottom = 22.5636
+text = "Achievement Title here"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AchievementDesc" type="RichTextLabel" parent="AchievementInfo"]
+margin_left = 52.0
+margin_top = 22.0
+margin_right = 203.0
+margin_bottom = 54.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "This is my achievement description text here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
