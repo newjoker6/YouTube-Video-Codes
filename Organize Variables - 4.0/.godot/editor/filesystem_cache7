@@ -1,0 +1,7 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1663432431
+control.gd::GDScript::-1::1663397467::0::1::::<>Control<>::
+control.tscn::PackedScene::7780461459554432702::1663397467::0::1::::<><>::res://control.gd
+Grassland@128x128.png::CompressedTexture2D::1977716879589440836::1663432319::1663432320::1::::<><>::
+icon.svg::CompressedTexture2D::8011151948193642879::1663392971::1663392978::1::::<><>::
+Waterfall@64x64.png::CompressedTexture2D::2501554867188166929::1663432431::1663432432::1::::<><>::

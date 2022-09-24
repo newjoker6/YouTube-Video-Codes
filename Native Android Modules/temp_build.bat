@@ -1,0 +1,1 @@
+scons -C "C:\Users\newjo\AppData\Roaming\Godot\native" bits=64 target_path="C:\Users\newjo\AppData\Roaming\Godot\native\bin\my_project" src_path="C:\Users\newjo\AppData\Roaming\Godot\native\src\my_project" platform=windows use_mingw=yes target=release -j1

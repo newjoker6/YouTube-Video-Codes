@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "EditorPlugin",
+"class": "NativeIntegration",
+"language": "GDScript",
+"path": "res://addons/native_integration/NativeIntegration.gd"
+}, {
+"base": "Control",
+"class": "NativeMain",
+"language": "GDScript",
+"path": "res://addons/native_integration/NativeMainWindow.gd"
+}, {
+"base": "Resource",
+"class": "NativeProject",
+"language": "GDScript",
+"path": "res://addons/native_integration/NativeProject.gd"
+} ]
+_global_script_class_icons={
+"NativeIntegration": "",
+"NativeMain": "",
+"NativeProject": ""
+}
+
+[NativeLib]
+
+Python="C:/Program Files/Python310/python.exe"
+
+[application]
+
+config/name="Native Android Modules"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg", "res://addons/native_integration/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

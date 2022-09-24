@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://di36cfn1j2h63"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_wt2k1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wt2k1")
+move_speed = 17
+run_speed = 25.7
