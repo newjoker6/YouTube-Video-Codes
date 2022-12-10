@@ -1,0 +1,148 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+color = Color( 0.129412, 0.129412, 0.129412, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 64.0
+margin_right = -438.0
+margin_bottom = -23.0
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 610.0
+margin_top = 98.0
+margin_right = -9.0
+margin_bottom = -24.0
+tab_align = 0
+
+[node name="Plugins" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="TabContainer/Plugins"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 1.0
+margin_right = -46.0
+margin_bottom = -3.0
+
+[node name="ItemList" type="ItemList" parent="TabContainer/Plugins/ScrollContainer2"]
+margin_right = 345.0
+margin_bottom = 430.0
+rect_min_size = Vector2( 345, 430 )
+auto_height = true
+
+[node name="Upbutton" type="Button" parent="TabContainer/Plugins"]
+margin_left = 353.0
+margin_top = 101.0
+margin_right = 400.0
+margin_bottom = 121.0
+text = "Up"
+
+[node name="DownButton" type="Button" parent="TabContainer/Plugins"]
+margin_left = 352.0
+margin_top = 134.0
+margin_right = 400.0
+margin_bottom = 154.0
+text = "Down"
+
+[node name="Saves" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Screenshots" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="OptionButton" type="OptionButton" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 640.0
+margin_top = 40.0
+margin_right = -64.0
+margin_bottom = -536.0
+text = "Add New Game"
+items = [ "Add New Game", null, false, 99, null ]
+selected = 0
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 968.0
+margin_top = 40.0
+margin_right = -20.0
+margin_bottom = -536.0
+text = "Run"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 33.0
+margin_top = 75.0
+margin_right = -446.0
+margin_bottom = -33.0
+
+[node name="ItemList" type="ItemList" parent="ScrollContainer"]
+margin_right = 540.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 540, 490 )
+select_mode = 1
+auto_height = true
+
+[node name="EnableButton" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 37.0
+margin_right = -457.0
+margin_bottom = -543.0
+text = "Enable"
+
+[node name="SaveLoadOrder" type="Button" parent="."]
+margin_left = 891.0
+margin_top = 96.0
+margin_right = 1007.0
+margin_bottom = 116.0
+text = "Save Load Order"
+
+[connection signal="item_activated" from="TabContainer/Plugins/ScrollContainer2/ItemList" to="." method="_on_PluginList_item_activated"]
+[connection signal="pressed" from="TabContainer/Plugins/Upbutton" to="." method="_on_Upbutton_pressed"]
+[connection signal="pressed" from="TabContainer/Plugins/DownButton" to="." method="_on_DownButton_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="EnableButton" to="." method="_on_EnableButton_pressed"]
+[connection signal="pressed" from="SaveLoadOrder" to="." method="_on_SaveLoadOrder_pressed"]
