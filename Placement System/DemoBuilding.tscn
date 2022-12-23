@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Building" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -974.0
+margin_bottom = -550.0
+rect_min_size = Vector2( 50, 50 )
+expand = true
+stretch_mode = 5
