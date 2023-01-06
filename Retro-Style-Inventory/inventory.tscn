@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bag.tscn" type="PackedScene" id=1]
+[ext_resource path="res://InventoryDemo.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 389.0
+margin_top = 130.0
+margin_right = 531.0
+margin_bottom = 170.0
+
+[node name="PouchLabel" type="Label" parent="ColorRect2"]
+margin_left = 1.0
+margin_right = 141.0
+margin_bottom = 40.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Items"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 382.0
+margin_top = 361.0
+margin_right = 605.0
+margin_bottom = 491.0
+
+[node name="ItemDescription" type="Label" parent="ColorRect"]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 214.0
+margin_bottom = 123.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
+clip_text = true
+
+[node name="Bag" parent="." instance=ExtResource( 1 )]
