@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ggry8kbqijp0"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_t6q8o"]
+[ext_resource type="Texture2D" uid="uid://cfn76ejwxhlk7" path="res://3355103_orig.jpg" id="1_u4kt2"]
+[ext_resource type="Texture2D" uid="uid://dch5e32q2a2is" path="res://icon.svg" id="2_2s6gq"]
+[ext_resource type="Script" path="res://character.cs" id="3_wgyrc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvs33"]
+size = Vector2(30, 32)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_iuhly"]
+vertices = PackedVector2Array(747, 22, 844, 15, 839, 216, 733, 605, 161, 649, 160, 609, 827, 637, 854, 416, 954, 423, 1118, 212, 1124, 256, 1116, 415, 983, 423, 983, 657, 954, 657, 595, 408, 598, 29, 690, 492, 10, 501, 139, 389, 10, 13, 120, 10)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 6), PackedInt32Array(7, 6, 3, 2), PackedInt32Array(8, 7, 2, 9, 10, 11, 12), PackedInt32Array(8, 12, 13, 14), PackedInt32Array(15, 16, 17), PackedInt32Array(15, 17, 18, 19), PackedInt32Array(19, 18, 20, 21)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(160, 609, 733, 605, 747, 22, 844, 15, 839, 216, 1118, 212, 1124, 256, 1116, 415, 983, 423, 983, 657, 954, 657, 954, 423, 854, 416, 827, 637, 161, 649), PackedVector2Array(598, 29, 690, 492, 10, 501, 10, 13, 120, 10, 139, 389, 595, 408)])
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t6q8o")
+
+[node name="3355103Orig" type="Sprite2D" parent="."]
+position = Vector2(575, 329.75)
+scale = Vector2(1.152, 1.06)
+texture = ExtResource("1_u4kt2")
+
+[node name="character" type="RigidBody2D" parent="."]
+position = Vector2(221, 454)
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("3_wgyrc")
+
+[node name="Sprite2D" type="Sprite2D" parent="character"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_2s6gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="character"]
+shape = SubResource("RectangleShape2D_jvs33")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="character"]
+avoidance_enabled = true
+debug_path_custom_color = Color(1, 0.0196078, 0, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_iuhly")
+
+[connection signal="velocity_computed" from="character/NavigationAgent2D" to="character" method="_on_navigation_agent_2d_velocity_computed"]
