@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn4mp0srxromu"]
+
+[ext_resource type="Shader" path="res://2DOutlineShader.gdshader" id="1_8y8e7"]
+[ext_resource type="Texture2D" uid="uid://1cocr5hjpl0a" path="res://Player.png" id="2_fhrcj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uocju"]
+shader = ExtResource("1_8y8e7")
+shader_parameter/outline_color = Color(0.0862745, 0.917647, 0.419608, 1)
+shader_parameter/outline_size = 5.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uocju")
+texture = ExtResource("2_fhrcj")
