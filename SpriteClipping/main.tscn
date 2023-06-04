@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://rhye4wy3uyb6"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_bgms0"]
+[ext_resource type="Texture2D" uid="uid://da0o1bt6ix714" path="res://Player.png" id="1_mq37c"]
+[ext_resource type="PackedScene" uid="uid://dgf0bmmsoflif" path="res://bullet.tscn" id="2_i006d"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(599, 534)
+scale = Vector2(6.75, 6.75)
+script = ExtResource("1_bgms0")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+clip_children = 2
+texture_filter = 1
+texture = ExtResource("1_mq37c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PackedVector2Array(-14.8148, 9.62962, -15.1111, 4, -11.7037, 1.03703, -11.7037, -4.88889, -10.3704, -6.07407, -9.18518, -4.88889, -8.88889, -2.96297, -3.25925, -9.48148, -2.81481, -14.2222, -0.444443, -16.4444, 1.03704, -16.1482, 2.81482, -14.2222, 3.25926, -9.33334, 5.77778, -7.25926, 8.5926, -2.81482, 9.03704, -4.88889, 10.3704, -6.22222, 11.7037, -5.33334, 12, 1.33333, 14.963, 4, 15.1111, 9.33333, 7.7037, 10.8148, 4.14816, 11.1111, 1.77778, 14.6667, -2.07407, 15.1111, -4.2963, 10.963, -8.14815, 10.6667)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(596, 20)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(490, -117)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(651, -199)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(684, -198)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(544, -41)
+
+[node name="CharacterBody2D7" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(737, -6)
+
+[node name="CharacterBody2D8" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(631, -143)
+
+[node name="CharacterBody2D9" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(522, -197)
+
+[node name="CharacterBody2D10" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(555, -196)
+
+[node name="CharacterBody2D11" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(685, -67)
+
+[node name="CharacterBody2D12" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(603, -306)
+
+[node name="CharacterBody2D13" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(497, -443)
+
+[node name="CharacterBody2D14" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(658, -525)
+
+[node name="CharacterBody2D15" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(691, -524)
+
+[node name="CharacterBody2D16" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(551, -367)
+
+[node name="CharacterBody2D17" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(744, -332)
+
+[node name="CharacterBody2D18" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(638, -469)
+
+[node name="CharacterBody2D19" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(529, -523)
+
+[node name="CharacterBody2D20" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(562, -522)
+
+[node name="CharacterBody2D21" parent="." instance=ExtResource("2_i006d")]
+position = Vector2(692, -393)

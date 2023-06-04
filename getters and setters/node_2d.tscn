@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3jgwet67yggx"]
+
+[ext_resource type="Script" path="res://settersgetters.cs" id="1_xmc0t"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xmc0t")

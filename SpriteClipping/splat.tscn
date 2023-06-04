@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crsgwh3q6d5gf"]
+
+[ext_resource type="Texture2D" uid="uid://oxn1kcg2b3xx" path="res://white-splatter-md.png" id="1_j421k"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_j421k")
