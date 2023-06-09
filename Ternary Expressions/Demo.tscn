@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx1lk3rex7umq"]
+
+[ext_resource type="Script" path="res://Ternary_Expression.gd" id="1_08bqh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08bqh")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 270.0
+offset_right = 708.0
+offset_bottom = 301.0
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
