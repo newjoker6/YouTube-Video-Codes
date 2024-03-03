@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://do53gdn5dys4p"]
+
+[ext_resource type="Texture2D" uid="uid://cfffpayc2wxn8" path="res://questmarker.png" id="1_ywxl2"]
+
+[node name="QuestMarker" type="Sprite2D"]
+texture = ExtResource("1_ywxl2")

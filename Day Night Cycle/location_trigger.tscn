@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn40f4ryasb0v"]
+
+[ext_resource type="Script" path="res://QuestAreaTrigger.gd" id="1_13651"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gobmv"]
+size = Vector2(41, 63)
+
+[node name="LocationTrigger" type="Area2D"]
+position = Vector2(89, 316)
+script = ExtResource("1_13651")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -3.5)
+shape = SubResource("RectangleShape2D_gobmv")

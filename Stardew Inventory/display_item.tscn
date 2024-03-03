@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkqf6gvuklx6i"]
+
+[ext_resource type="Script" path="res://display_item.gd" id="1_eoo21"]
+[ext_resource type="Texture2D" uid="uid://dntbm4i8tirx5" path="res://icon.svg" id="1_xkdww"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4aly2"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DisplayItem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eoo21")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xkdww")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 37.0
+offset_right = 63.0
+offset_bottom = 63.0
+text = "00"
+label_settings = SubResource("LabelSettings_4aly2")
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_mouse_exited"]

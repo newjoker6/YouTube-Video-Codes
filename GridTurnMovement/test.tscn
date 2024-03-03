@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctl3x1b1smmk5"]
+
+[ext_resource type="Texture2D" uid="uid://bunkhvb0k6ebn" path="res://icon.svg" id="1_haegi"]
+[ext_resource type="Script" path="res://test.cs" id="2_p0t6h"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(534, 292)
+scale = Vector2(10.5313, 10.5313)
+texture = ExtResource("1_haegi")
+script = ExtResource("2_p0t6h")
+
+[node name="mynew sprite2" type="Sprite2D" parent="Icon"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2qucaxvmbuuj"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_1necg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q4ylx"]
+
+[sub_resource type="Sky" id="Sky_b3vjj"]
+sky_material = SubResource("ProceduralSkyMaterial_q4ylx")
+
+[sub_resource type="Environment" id="Environment_bubgw"]
+background_mode = 2
+sky = SubResource("Sky_b3vjj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6suys"]
+cull_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7iq6m"]
+material = SubResource("StandardMaterial3D_6suys")
+size = Vector2(1, 0.5)
+subdivide_width = 14
+subdivide_depth = 14
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pbq5s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iy1x0"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.966788, 0.255581, 0, -0.255581, 0.966788, 0.788514, 1.2587, 3.10454)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bubgw")
+
+[node name="SoftBody3D" type="SoftBody3D" parent="."]
+transform = Transform3D(0.0911193, 0.99584, 0, -0.99584, 0.0911193, 0, 0, 0, 1, 0.540041, 0.0674148, 0)
+mesh = SubResource("PlaneMesh_7iq6m")
+simulation_precision = 100
+total_mass = 0.01
+linear_stiffness = 0.01
+ray_pickable = false
+pinned_points = [95, 111, 127, 143, 159, 15, 31, 47, 63, 79, 175, 191, 207, 223, 239, 255]
+attachments/0/point_index = 95
+attachments/0/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/0/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/1/point_index = 111
+attachments/1/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/1/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/2/point_index = 127
+attachments/2/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/2/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/3/point_index = 143
+attachments/3/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/3/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/4/point_index = 159
+attachments/4/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/4/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/5/point_index = 15
+attachments/5/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/5/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/6/point_index = 31
+attachments/6/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/6/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/7/point_index = 47
+attachments/7/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/7/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/8/point_index = 63
+attachments/8/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/8/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/9/point_index = 79
+attachments/9/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/9/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/10/point_index = 175
+attachments/10/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/10/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/11/point_index = 191
+attachments/11/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/11/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/12/point_index = 207
+attachments/12/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/12/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/13/point_index = 223
+attachments/13/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/13/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/14/point_index = 239
+attachments/14/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/14/offset = Vector3(0.540041, 0.0674148, 0)
+attachments/15/point_index = 255
+attachments/15/spatial_attachment_path = NodePath("../CharacterBody3D/MeshInstance3D")
+attachments/15/offset = Vector3(0.540041, 0.0674148, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_1necg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_pbq5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_iy1x0")

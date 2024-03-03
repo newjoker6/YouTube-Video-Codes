@@ -1,0 +1,181 @@
+[gd_scene load_steps=10 format=3 uid="uid://bq8ieyxbck1dq"]
+
+[ext_resource type="Texture2D" uid="uid://dntbm4i8tirx5" path="res://icon.svg" id="1_4ooea"]
+[ext_resource type="Script" path="res://GridContainer.gd" id="1_506du"]
+[ext_resource type="Script" path="res://Player.gd" id="1_no2eq"]
+[ext_resource type="Script" path="res://ScrollContainer.gd" id="1_q36re"]
+[ext_resource type="PackedScene" uid="uid://dkqf6gvuklx6i" path="res://display_item.tscn" id="2_7176j"]
+[ext_resource type="Script" path="res://Inventory.gd" id="2_q5ifg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq48n"]
+size = Vector2(56, 234)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dms80"]
+size = Vector2(81, 234)
+
+[sub_resource type="Resource" id="Resource_ybgle"]
+script = ExtResource("2_q5ifg")
+Slots = Array[Resource("res://Item.gd")]([])
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 149.0
+offset_top = 204.0
+offset_right = 803.0
+offset_bottom = 430.0
+color = Color(1, 0.721569, 0.501961, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q36re")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/ColorRect/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 70
+columns = 12
+script = ExtResource("1_506du")
+
+[node name="DisplayItem" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem2" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem3" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem4" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem5" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem6" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem7" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem8" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem9" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem10" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem11" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem12" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem13" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem14" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem15" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem16" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem17" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem18" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem19" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem20" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem21" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem22" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem23" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem24" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem25" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem26" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem27" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem28" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem29" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem30" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem31" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem32" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem33" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem34" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem35" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="DisplayItem36" parent="CanvasLayer/ColorRect/ScrollContainer/GridContainer" instance=ExtResource("2_7176j")]
+layout_mode = 2
+
+[node name="Right" type="Area2D" parent="CanvasLayer/ColorRect/ScrollContainer"]
+position = Vector2(648, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ColorRect/ScrollContainer/Right"]
+position = Vector2(20, 107)
+shape = SubResource("RectangleShape2D_oq48n")
+
+[node name="Left" type="Area2D" parent="CanvasLayer/ColorRect/ScrollContainer"]
+position = Vector2(7, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/ColorRect/ScrollContainer/Left"]
+position = Vector2(-25.5, 107)
+shape = SubResource("RectangleShape2D_dms80")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(598, 108)
+script = ExtResource("1_no2eq")
+inventory = SubResource("Resource_ybgle")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_4ooea")
+
+[connection signal="mouse_entered" from="CanvasLayer/ColorRect/ScrollContainer/Right" to="CanvasLayer/ColorRect/ScrollContainer" method="ScrollRightEntered"]
+[connection signal="mouse_exited" from="CanvasLayer/ColorRect/ScrollContainer/Right" to="CanvasLayer/ColorRect/ScrollContainer" method="ScrollAreaExit"]
+[connection signal="mouse_entered" from="CanvasLayer/ColorRect/ScrollContainer/Left" to="CanvasLayer/ColorRect/ScrollContainer" method="ScrollLeftEntered"]
+[connection signal="mouse_exited" from="CanvasLayer/ColorRect/ScrollContainer/Left" to="CanvasLayer/ColorRect/ScrollContainer" method="ScrollAreaExit"]

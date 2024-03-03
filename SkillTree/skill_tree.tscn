@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://03gh4ux3jcd8"]
+
+[ext_resource type="Script" path="res://skill_tree.gd" id="1_500mb"]
+[ext_resource type="PackedScene" uid="uid://cjuugtcmiram3" path="res://skill_button.tscn" id="1_h3nu7"]
+
+[node name="SkillTree" type="Control" groups=["SkillTree"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_500mb")
+
+[node name="TreeBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.505882)
+
+[node name="SkillButton" parent="." instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 508.0
+offset_right = 397.0
+offset_bottom = 583.0
+disabled = false
+SkillName = "Dash"
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = -113.0
+offset_top = -99.0
+offset_right = -38.0
+offset_bottom = -24.0
+MaxLevel = 2
+SkillName = "Fireball"
+
+[node name="SkillButton5" parent="SkillButton/SkillButton2" instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -135.0
+offset_right = 8.0
+offset_bottom = -60.0
+MaxLevel = 5
+
+[node name="SkillButton3" parent="SkillButton" instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -117.0
+offset_right = 179.0
+offset_bottom = -42.0
+MaxLevel = 4
+
+[node name="SkillButton4" parent="SkillButton/SkillButton3" instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -122.0
+offset_right = 31.0
+offset_bottom = -47.0
+MaxLevel = 2
+
+[node name="SkillButton6" parent="SkillButton/SkillButton3" instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = 84.0
+offset_top = -126.0
+offset_right = 159.0
+offset_bottom = -51.0
+
+[node name="SkillButton7" parent="SkillButton/SkillButton3/SkillButton6" instance=ExtResource("1_h3nu7")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -128.0
+offset_right = 115.0
+offset_bottom = -53.0
+MaxLevel = 5

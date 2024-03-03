@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://rcjp80v7lgaj"]
+
+[ext_resource type="PackedScene" uid="uid://3p75q8x7efqm" path="res://card.tscn" id="1_17ucw"]
+[ext_resource type="Resource" uid="uid://ws7oqtc68tqp" path="res://DangerDuck.res" id="2_fyxgt"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Card" parent="." instance=ExtResource("1_17ucw")]
+position = Vector2(301, 336)
+Card = ExtResource("2_fyxgt")

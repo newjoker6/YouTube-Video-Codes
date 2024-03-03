@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://nbcmxrddsdqm"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_nmmrh"]
+
+[node name="SpreadsheetLoad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmmrh")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 58.0
+offset_right = 726.0
+offset_bottom = 533.0
+theme_override_constants/h_separation = 40
+columns = 3

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://nv6jqox636mn"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_nbdgm"]
+[ext_resource type="Script" path="res://Button.gd" id="2_gv7ed"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_0b76y"]
+device = -1
+ctrl_pressed = true
+keycode = 83
+unicode = 115
+
+[sub_resource type="Shortcut" id="Shortcut_lh00m"]
+events = [SubResource("InputEventKey_0b76y")]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nbdgm")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 352.0
+offset_right = 642.0
+offset_bottom = 383.0
+toggle_mode = true
+shortcut = SubResource("Shortcut_lh00m")
+text = "PRESS ME!!!!!!!!!"
+script = ExtResource("2_gv7ed")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="toggled" from="Button" to="Button" method="_on_toggled"]

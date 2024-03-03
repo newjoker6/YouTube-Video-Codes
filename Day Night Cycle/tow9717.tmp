@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3s1t7371sphm"]
+
+[ext_resource type="Texture2D" uid="uid://b6ts3rqjdu0pi" path="res://ab4cdb02e247ee5b24e3d529b19ba5ba.png" id="1_p4na5"]
+[ext_resource type="Script" path="res://daynight.gd" id="1_upowt"]
+[ext_resource type="Texture2D" uid="uid://dd3mqgfqtiba6" path="res://asteroids.png" id="3_rvsp7"]
+[ext_resource type="Script" path="res://Rock.gd" id="4_mlc07"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="5_0xlkd"]
+[ext_resource type="Texture2D" uid="uid://80ef2qwgq3hj" path="res://icon.svg" id="6_xm0o3"]
+[ext_resource type="Script" path="res://mapcam.gd" id="7_hhdw4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_upowt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.25, 328)
+scale = Vector2(1.655, 1.655)
+texture = ExtResource("1_p4na5")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1157.0
+offset_bottom = 659.0
+color = Color(0.0196078, 0, 0.137255, 0.584314)
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(331, 377)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rvsp7")
+hframes = 8
+vframes = 8
+script = ExtResource("4_mlc07")
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(382, 259)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rvsp7")
+hframes = 8
+vframes = 8
+script = ExtResource("4_mlc07")
+
+[node name="Rock3" type="Sprite2D" parent="."]
+position = Vector2(222, 368)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rvsp7")
+hframes = 8
+vframes = 8
+script = ExtResource("4_mlc07")
+
+[node name="Rock4" type="Sprite2D" parent="."]
+position = Vector2(544, 394)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rvsp7")
+hframes = 8
+vframes = 8
+script = ExtResource("4_mlc07")
+
+[node name="Rock5" type="Sprite2D" parent="."]
+position = Vector2(559, 258)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rvsp7")
+hframes = 8
+vframes = 8
+script = ExtResource("4_mlc07")
+
+[node name="Rock6" type="Sprite2D" parent="."]
+position = Vector2(214, 229)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_rvsp7")
+hframes = 8
+vframes = 8
+script = ExtResource("4_mlc07")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("5_0xlkd")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(451, 324)
+scale = Vector2(0.34375, 0.34375)
+texture = ExtResource("6_xm0o3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MapBG" type="TextureRect" parent="CanvasLayer"]
+offset_left = 943.0
+offset_top = 10.0
+offset_right = 1143.0
+offset_bottom = 210.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/MapBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/MapBG/SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(200, 200)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/MapBG/SubViewportContainer/SubViewport"]
+script = ExtResource("7_hhdw4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MapBG/SubViewportContainer/SubViewport"]
+position = Vector2(578.25, 328)
+scale = Vector2(1.655, 1.655)
+texture = ExtResource("1_p4na5")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

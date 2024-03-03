@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://3p75q8x7efqm"]
+
+[ext_resource type="Texture2D" uid="uid://c7d2bje0o8vci" path="res://CardBorder.svg" id="1_o01k3"]
+[ext_resource type="Script" path="res://card.gd" id="2_owy1c"]
+
+[node name="Card" type="Sprite2D" node_paths=PackedStringArray("Background", "Monster", "Attack", "Defense", "Nameplate")]
+position = Vector2(532, 335)
+scale = Vector2(0.444545, 0.444546)
+texture = ExtResource("1_o01k3")
+script = ExtResource("2_owy1c")
+Background = NodePath("ImageBackground")
+Monster = NodePath("Monster")
+Attack = NodePath("Attack")
+Defense = NodePath("Defense")
+Nameplate = NodePath("NamePlate")
+
+[node name="ImageBackground" type="Sprite2D" parent="."]
+
+[node name="Monster" type="Sprite2D" parent="."]
+
+[node name="Attack" type="Label" parent="."]
+offset_left = -337.194
+offset_top = -472.07
+offset_right = -272.194
+offset_bottom = -418.07
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 56
+text = "5"
+
+[node name="Defense" type="Label" parent="."]
+offset_left = 251.943
+offset_top = -472.07
+offset_right = 316.943
+offset_bottom = -392.07
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 56
+text = "5"
+
+[node name="NamePlate" type="Label" parent="."]
+offset_left = -223.0
+offset_top = -405.0
+offset_right = 227.0
+offset_bottom = -325.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 56
+text = "The Destroyer"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="cardDetails" load_steps=2 format=3 uid="uid://bgn8jt4msji7s"]
+
+[ext_resource type="Script" path="res://myresource.gd" id="1_rqvgv"]
+
+[resource]
+script = ExtResource("1_rqvgv")
+information = {
+"Description": "this is a card",
+"Name": "dark magician girl"
+}

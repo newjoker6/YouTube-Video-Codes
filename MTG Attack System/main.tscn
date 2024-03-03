@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3k845ptktsmu"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_m3t5w"]
+[ext_resource type="PackedScene" uid="uid://bk5nqfj2qyvaa" path="res://token.tscn" id="1_vhay5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1f21d"]
+font_size = 48
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_m3t5w")
+
+[node name="PlayerTokens" type="Node" parent="."]
+
+[node name="Token" parent="PlayerTokens" instance=ExtResource("1_vhay5")]
+position = Vector2(403, 376)
+EffectList = Array[String](["LethalTouch"])
+
+[node name="Token2" parent="PlayerTokens" instance=ExtResource("1_vhay5")]
+position = Vector2(810, 376)
+EffectList = Array[String](["GenericAttack"])
+
+[node name="NPCTokens" type="Node" parent="."]
+
+[node name="Token3" parent="NPCTokens" instance=ExtResource("1_vhay5")]
+position = Vector2(810, 126)
+
+[node name="Token4" parent="NPCTokens" instance=ExtResource("1_vhay5")]
+position = Vector2(406, 126)
+
+[node name="CombatButton" type="Button" parent="."]
+offset_left = 1025.0
+offset_top = 516.0
+offset_right = 1124.0
+offset_bottom = 574.0
+text = "Combat"
+
+[node name="PassButton" type="Button" parent="."]
+offset_left = 1025.0
+offset_top = 579.0
+offset_right = 1124.0
+offset_bottom = 637.0
+text = ">>"
+
+[node name="AttackLine" type="Line2D" parent="."]
+unique_name_in_owner = true
+
+[node name="PhaseLabel" type="Label" parent="."]
+offset_left = 291.0
+offset_top = 542.0
+offset_right = 960.0
+offset_bottom = 609.0
+text = "Current Phase:"
+label_settings = SubResource("LabelSettings_1f21d")
+
+[connection signal="pressed" from="CombatButton" to="." method="_on_combat_button_pressed"]
+[connection signal="pressed" from="PassButton" to="." method="_on_pass_button_pressed"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhkgk7fd63tm1"]
+
+[ext_resource type="Script" path="res://Ticker.gd" id="1_3sq0r"]
+[ext_resource type="Script" path="res://Label.gd" id="2_fefrq"]
+[ext_resource type="Texture2D" uid="uid://b2s7taytkqgeb" path="res://icon.svg" id="3_n06mx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfeqk"]
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.462745)
+
+[node name="Ticker" type="RichTextLabel" parent="." node_paths=PackedStringArray("ScreenNotifier")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -25.0
+offset_right = 1289.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+autowrap_mode = 0
+script = ExtResource("1_3sq0r")
+ScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Ticker"]
+scale = Vector2(26.05, 1)
+rect = Rect2(0, 0, 20, 20)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 32.0
+offset_right = 1406.0
+offset_bottom = 221.0
+text = "asdfasdfad asdfadf asdf asdf asdf asdf asdf asdf asdf asdf asd fasdf asdf asdf asdfasd fasd fasdfas dfasdf adsfasd fasdf asdfhaksdh flahskf aksljdhflkj asdlkjfh askldjhflkja sdflkjhaslkjdfhlkajshflk aviuohdfiuviou iuh iuh uiy uyo u u yt 7tf utry utyrf 7ig uiyg y uitgv iyutb"
+label_settings = SubResource("LabelSettings_yfeqk")
+autowrap_mode = 3
+script = ExtResource("2_fefrq")
+minFontSize = 5
+FitFontBox = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1152, 769)
+scale = Vector2(13.6016, 7.82031)
+texture = ExtResource("3_n06mx")
+
+[connection signal="screen_exited" from="Ticker/VisibleOnScreenNotifier2D" to="Ticker" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="resized" from="Label" to="Label" method="_on_resized"]

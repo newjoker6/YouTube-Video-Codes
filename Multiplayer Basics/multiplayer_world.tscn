@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://brbcudr54slwt"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_6a7qv"]
+[ext_resource type="PackedScene" uid="uid://bjn8ms5wcopdc" path="res://player.tscn" id="2_rxfds"]
+
+[node name="MultiplayerWorld" type="Node2D" node_paths=PackedStringArray("chatDisplay", "textInput")]
+script = ExtResource("1_6a7qv")
+playerScene = ExtResource("2_rxfds")
+chatDisplay = NodePath("CanvasLayer/ChatDisplay")
+textInput = NodePath("CanvasLayer/TextInput")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HostButton" type="Button" parent="CanvasLayer"]
+offset_left = 141.0
+offset_top = 182.0
+offset_right = 265.0
+offset_bottom = 303.0
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="CanvasLayer"]
+offset_left = 859.0
+offset_top = 193.0
+offset_right = 999.0
+offset_bottom = 314.0
+text = "Join"
+
+[node name="SendButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 230.0
+offset_top = -31.0
+offset_right = 277.0
+grow_vertical = 0
+text = "Send"
+
+[node name="TextInput" type="LineEdit" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 229.0
+grow_vertical = 0
+placeholder_text = "type a message..."
+
+[node name="ChatDisplay" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -254.0
+offset_right = 276.0
+offset_bottom = -31.0
+grow_vertical = 0
+bbcode_enabled = true
+scroll_following = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player.tscn")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="CanvasLayer/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SendButton" to="." method="_on_send_button_pressed"]

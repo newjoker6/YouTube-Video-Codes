@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn4mp0srxromu"]
+
+[ext_resource type="Shader" path="res://paintSplat.gdshader" id="2_qml1u"]
+[ext_resource type="Texture2D" uid="uid://b41vj18lanpw" path="res://icon.svg" id="2_qn8ig"]
+[ext_resource type="Shader" path="res://Rainbow.gdshader" id="3_poueb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uocju"]
+render_priority = 0
+shader = ExtResource("2_qml1u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hglg"]
+shader = ExtResource("3_poueb")
+shader_parameter/time = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahxa0"]
+shader = ExtResource("3_poueb")
+shader_parameter/time = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2egby"]
+shader = ExtResource("3_poueb")
+shader_parameter/time = null
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(555, 184)
+scale = Vector2(7.78516, 4.77734)
+texture = ExtResource("2_qn8ig")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uocju")
+position = Vector2(1087, 362)
+scale = Vector2(5.35938, 2.92188)
+texture = ExtResource("2_qn8ig")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0hglg")
+position = Vector2(220, 555)
+texture = ExtResource("2_qn8ig")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ahxa0")
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="Control" type="Control" parent="."]
+material = SubResource("ShaderMaterial_2egby")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1147.0
+offset_bottom = 645.0

@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfbwyg5tyha8"]
+
+[ext_resource type="PackedScene" uid="uid://pedqskpb6xv" path="res://postwar_city_-_exterior_scene.glb" id="1_hgnt5"]
+[ext_resource type="Script" path="res://FSR Demo.gd" id="1_wjo1o"]
+[ext_resource type="Script" path="res://debuginfo.gd" id="3_1tsqc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dqls5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 3.37
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_vx0hn"]
+sky_material = SubResource("ProceduralSkyMaterial_dqls5")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_xxw2a"]
+background_mode = 2
+sky = SubResource("Sky_vx0hn")
+ambient_light_source = 3
+tonemap_mode = 2
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_cascades = 8
+sdfgi_energy = 10.0
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_wjo1o")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 20.1898, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xxw2a")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_hgnt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165403, 1.19209e-07, -0.0698223)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06784, 1.77566, 7.2005)
+fov = 90.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_1tsqc")
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer"]
+offset_left = 18.0
+offset_top = 56.0
+offset_right = 365.0
+offset_bottom = 76.0
+
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer"]
+offset_left = 49.0
+offset_top = 108.0
+offset_right = 78.0
+offset_bottom = 176.0
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+offset_left = 27.0
+offset_top = 97.0
+offset_right = 366.0
+offset_bottom = 113.0
+max_value = 75.0
+step = 25.0
+
+[connection signal="item_selected" from="CanvasLayer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="CanvasLayer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_h_slider_value_changed"]

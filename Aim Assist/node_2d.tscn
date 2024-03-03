@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6bitcfs6fxpw"]
+
+[ext_resource type="Script" path="res://node_2d.cs" id="1_1l4b4"]
+[ext_resource type="Texture2D" uid="uid://c8jxwu8xkh1i8" path="res://icon.svg" id="1_1laqw"]
+[ext_resource type="Script" path="res://Enemy.gd" id="1_6u02p"]
+[ext_resource type="Script" path="res://Player.gd" id="2_x6yw1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6lrl"]
+size = Vector2(127, 128)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1l4b4")
+mydict = {
+5: "my value"
+}
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(587, 184)
+script = ExtResource("1_6u02p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("1_1laqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_s6lrl")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(591, 453)
+script = ExtResource("2_x6yw1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(1, 0.265625)
+texture = ExtResource("1_1laqw")
+
+[node name="AimAssistRay" type="RayCast2D" parent="Player/Sprite2D"]
+target_position = Vector2(1000, 0)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjuugtcmiram3"]
+
+[ext_resource type="Texture2D" uid="uid://5laynl4pg1xi" path="res://icon.svg" id="1_fuark"]
+[ext_resource type="Script" path="res://skill_button.gd" id="2_amd4d"]
+
+[node name="SkillButton" type="TextureButton"]
+self_modulate = Color(0.396078, 0.396078, 0.396078, 1)
+offset_right = 75.0
+offset_bottom = 75.0
+disabled = true
+texture_normal = ExtResource("1_fuark")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_amd4d")
+
+[node name="SkillLevel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "0/3"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SkillBranch" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+width = 5.0
+default_color = Color(0.611765, 0.611765, 0.611765, 1)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://buoa18eijcxmm"]
+
+[ext_resource type="Script" path="res://text_manager.cs" id="1_c6024"]
+
+[node name="TextManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6024")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 264.0
+offset_right = 630.0
+offset_bottom = 295.0
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

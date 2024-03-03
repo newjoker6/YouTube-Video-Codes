@@ -1,0 +1,154 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2axpxlod0k"]
+
+[ext_resource type="Script" path="res://controller.gd" id="1_3diw4"]
+[ext_resource type="Texture2D" uid="uid://dxw7s4huaub6r" path="res://box.png" id="1_g5ven"]
+[ext_resource type="Script" path="res://HealthBar1.gd" id="2_b5ahs"]
+[ext_resource type="Texture2D" uid="uid://dvrvpwycwu2qw" path="res://box2.png" id="2_n0ptj"]
+[ext_resource type="Texture2D" uid="uid://be5tvd3c6rlj3" path="res://circle.png" id="3_oguxe"]
+[ext_resource type="Texture2D" uid="uid://8df0wlgfkt7m" path="res://circle2.png" id="4_hgdsg"]
+[ext_resource type="Script" path="res://HealthBar2.gd" id="5_c7vho"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3diw4")
+
+[node name="HealthBar1" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 33.0
+offset_right = 973.0
+offset_bottom = 65.0
+value = 50.0
+nine_patch_stretch = true
+texture_progress = ExtResource("1_g5ven")
+script = ExtResource("2_b5ahs")
+
+[node name="HealthBar2" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 88.0
+offset_right = 973.0
+offset_bottom = 122.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_n0ptj")
+texture_progress = ExtResource("1_g5ven")
+script = ExtResource("2_b5ahs")
+
+[node name="HealthBar3" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 149.0
+offset_right = 973.0
+offset_bottom = 183.0
+value = 75.0
+nine_patch_stretch = true
+texture_progress = ExtResource("2_n0ptj")
+script = ExtResource("5_c7vho")
+
+[node name="HealthBar3_1" type="TextureProgressBar" parent="HealthBar3" groups=["Health"]]
+layout_mode = 0
+offset_right = 857.0
+offset_bottom = 34.0
+value = 50.0
+nine_patch_stretch = true
+texture_progress = ExtResource("1_g5ven")
+
+[node name="HealthBar9" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 370.0
+offset_right = 973.0
+offset_bottom = 404.0
+value = 75.0
+fill_mode = 6
+nine_patch_stretch = true
+texture_progress = ExtResource("2_n0ptj")
+script = ExtResource("5_c7vho")
+
+[node name="HealthBar9_1" type="TextureProgressBar" parent="HealthBar9" groups=["Health"]]
+layout_mode = 0
+offset_right = 857.0
+offset_bottom = 34.0
+value = 50.0
+fill_mode = 6
+nine_patch_stretch = true
+texture_progress = ExtResource("1_g5ven")
+
+[node name="HealthBar7" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 262.0
+offset_right = 973.0
+offset_bottom = 296.0
+value = 50.0
+fill_mode = 6
+nine_patch_stretch = true
+texture_progress = ExtResource("1_g5ven")
+script = ExtResource("2_b5ahs")
+
+[node name="HealthBar8" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 312.0
+offset_right = 973.0
+offset_bottom = 346.0
+value = 50.0
+fill_mode = 6
+nine_patch_stretch = true
+texture_under = ExtResource("2_n0ptj")
+texture_progress = ExtResource("1_g5ven")
+script = ExtResource("2_b5ahs")
+
+[node name="HealthBar4" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 481.0
+offset_right = 386.0
+offset_bottom = 609.0
+value = 50.0
+fill_mode = 5
+texture_progress = ExtResource("3_oguxe")
+script = ExtResource("2_b5ahs")
+
+[node name="HealthBar5" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 481.0
+offset_right = 606.0
+offset_bottom = 609.0
+value = 50.0
+fill_mode = 5
+texture_under = ExtResource("4_hgdsg")
+texture_progress = ExtResource("3_oguxe")
+script = ExtResource("2_b5ahs")
+
+[node name="HealthBar6" type="TextureProgressBar" parent="." groups=["Health"]]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 481.0
+offset_right = 827.0
+offset_bottom = 609.0
+value = 50.0
+fill_mode = 5
+texture_progress = ExtResource("4_hgdsg")
+script = ExtResource("5_c7vho")
+
+[node name="HealthBar6_1" type="TextureProgressBar" parent="HealthBar6" groups=["Health"]]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+value = 50.0
+fill_mode = 5
+texture_progress = ExtResource("3_oguxe")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

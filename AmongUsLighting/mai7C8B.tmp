@@ -1,0 +1,170 @@
+[gd_scene load_steps=11 format=3 uid="uid://tj3dwcc072hs"]
+
+[ext_resource type="Texture2D" uid="uid://b0atv4qd3yync" path="res://icon.svg" id="1_3dogf"]
+[ext_resource type="Script" path="res://Player.gd" id="2_er2mt"]
+[ext_resource type="Texture2D" uid="uid://bt1j0hpeyn4ru" path="res://Light3.png" id="3_yxruk"]
+[ext_resource type="Script" path="res://RayCast2D.gd" id="4_abx1t"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6820k"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sly17"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6314a"]
+polygon = PackedVector2Array(-60.2353, -395.294, -45.1765, -406.588, 45.1765, -410.353, 65.8824, -395.294, 67.7647, 96, 52.7059, 105.412, -56.4706, 105.412, -64, 97.8824)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cofme"]
+size = Vector2(120.47, 508.235)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8m7rd"]
+light_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ovhs"]
+size = Vector2(125.673, 125.285)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.333333, 0, 1, 1)
+position = Vector2(546, 273)
+scale = Vector2(1.358, 1)
+texture = SubResource("PlaceholderTexture2D_6820k")
+
+[node name="Player" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(222, 352)
+texture = ExtResource("1_3dogf")
+script = ExtResource("2_er2mt")
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+position = Vector2(1, 1)
+scale = Vector2(2.5, 2.5)
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = ExtResource("3_yxruk")
+texture_scale = 1.95
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 0)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D8" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, -15)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D9" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, -30)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D10" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, -45)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D11" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, -60)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D12" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, -75)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D13" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, -90)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 15)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 30)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 45)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D5" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 60)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D6" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 75)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D7" type="RayCast2D" parent="Player"]
+target_position = Vector2(200, 90)
+script = ExtResource("4_abx1t")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+light_mask = 3
+position = Vector2(372, 272)
+scale = Vector2(0.53125, 0.53125)
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, -145.882)
+scale = Vector2(1, 3.95588)
+texture = ExtResource("1_3dogf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+material = SubResource("CanvasItemMaterial_sly17")
+occluder = SubResource("OccluderPolygon2D_6314a")
+occluder_light_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, -148.706)
+shape = SubResource("RectangleShape2D_cofme")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+light_mask = 3
+position = Vector2(376, 604)
+scale = Vector2(0.53125, 0.53125)
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(0, -145.882)
+scale = Vector2(1, 3.95588)
+texture = ExtResource("1_3dogf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D2"]
+material = SubResource("CanvasItemMaterial_sly17")
+occluder = SubResource("OccluderPolygon2D_6314a")
+occluder_light_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
+position = Vector2(0, -148.706)
+shape = SubResource("RectangleShape2D_cofme")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+light_mask = 2
+position = Vector2(441, 312)
+scale = Vector2(0.429688, 0.454963)
+
+[node name="Icon2" type="Sprite2D" parent="CharacterBody2D"]
+material = SubResource("CanvasItemMaterial_8m7rd")
+texture = ExtResource("1_3dogf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(-0.00012207, -1.099)
+shape = SubResource("RectangleShape2D_1ovhs")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+position = Vector2(35, 7)
+blend_mode = 1

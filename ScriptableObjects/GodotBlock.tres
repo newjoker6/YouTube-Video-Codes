@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://mww2we7fv5fy"]
+
+[ext_resource type="Script" path="res://CardData.gd" id="1_4phm7"]
+[ext_resource type="Texture2D" uid="uid://bwgcb8pf4lds3" path="res://Background.svg" id="1_28jxo"]
+[ext_resource type="Texture2D" uid="uid://ni105qja6486" path="res://icon.svg" id="2_ik67u"]
+
+[resource]
+script = ExtResource("1_4phm7")
+Monster = ExtResource("2_ik67u")
+Background = ExtResource("1_28jxo")
+Attack = 2
+Defense = 7
+name = "The Godot Block"
