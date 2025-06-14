@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://duyw2cut1s0o2"]
+
+[ext_resource type="Texture2D" uid="uid://c0fl2vf7lc7bg" path="res://LockedPin.png" id="1_edph4"]
+
+[node name="LockedPin" type="Sprite2D"]
+texture = ExtResource("1_edph4")

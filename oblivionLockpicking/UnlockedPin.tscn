@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0q0qhuo7hgye"]
+
+[ext_resource type="Texture2D" uid="uid://bflih6dnmag0h" path="res://Pin.png" id="1_jlmys"]
+[ext_resource type="Script" uid="uid://cmlo0njunq2h0" path="res://UnlockedPin.gd" id="2_xubqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jiac"]
+
+[node name="Pin" type="Sprite2D"]
+texture = ExtResource("1_jlmys")
+script = ExtResource("2_xubqd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 38)
+shape = SubResource("RectangleShape2D_2jiac")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxhafewe2poc2"]
+
+[ext_resource type="Script" uid="uid://crqeb2rv6muxe" path="res://lock_picking_scene.gd" id="1_0qt0u"]
+[ext_resource type="Texture2D" uid="uid://c1do502w7bxcx" path="res://slice1.png" id="1_pvolp"]
+[ext_resource type="PackedScene" uid="uid://c0q0qhuo7hgye" path="res://UnlockedPin.tscn" id="2_cl2fd"]
+[ext_resource type="PackedScene" uid="uid://duyw2cut1s0o2" path="res://locked_pin.tscn" id="3_0qt0u"]
+[ext_resource type="Texture2D" uid="uid://dbg3ldom6e1v" path="res://Lockpick.png" id="4_iv5l8"]
+[ext_resource type="Script" uid="uid://csd7wfnc0mwft" path="res://lockpick.gd" id="5_0qt0u"]
+
+[sub_resource type="Gradient" id="Gradient_np6e0"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.246094, 0.191548, 0.0434889, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o1om8"]
+gradient = SubResource("Gradient_np6e0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm2rk"]
+size = Vector2(18, 20)
+
+[node name="LockPickingScene" type="Node2D"]
+script = ExtResource("1_0qt0u")
+lockedPinScene = ExtResource("3_0qt0u")
+unlockedPinScene = ExtResource("2_cl2fd")
+
+[node name="BackingLower" type="Sprite2D" parent="."]
+position = Vector2(504, 360)
+scale = Vector2(7, 1.75)
+texture = SubResource("GradientTexture2D_o1om8")
+
+[node name="BackingUpper" type="Sprite2D" parent="."]
+position = Vector2(584, 228)
+scale = Vector2(4, 3.125)
+texture = SubResource("GradientTexture2D_o1om8")
+
+[node name="Lock" type="Sprite2D" parent="."]
+position = Vector2(520, 270)
+texture = ExtResource("1_pvolp")
+
+[node name="Lockpick" type="CharacterBody2D" parent="."]
+position = Vector2(240, 360)
+script = ExtResource("5_0qt0u")
+
+[node name="LockpickSprite" type="Sprite2D" parent="Lockpick"]
+texture = ExtResource("4_iv5l8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lockpick"]
+position = Vector2(247, -16)
+shape = SubResource("RectangleShape2D_gm2rk")
